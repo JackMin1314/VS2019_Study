@@ -71,25 +71,33 @@ namespace VideoConf
         public void getjson(string result)
         {
             // 用JArray是因为请求返回的配置文件可能是一个数组，多个配置
-            JArray ja = JArray.Parse(result);
-            Video_Info video_deails = new Video_Info();
-            IList<JToken> needList = new List<JToken>(); 
-            foreach (var item in ja)
-            {
-                textBox1.Text += ((JObject)item)["code"]+"\r\n";// 相当于每次取ja数组中的元素，转换成JObject单独再单独提取里面code(注意括号)
-                textBox1.Text += ((JObject)item)["msg"] +"\r\n";
-                if (((JObject)item)["code"].ToString()=="113")// 当返回的code是113表示data有数据，114为无数据
-                {
-                    textBox1.Text += ((JObject)item)["data"]["id"] + "\r\n";
-                    textBox1.Text += ((JObject)item)["data"]["isOpen"] + "\r\n";
-                    textBox1.Text += ((JObject)item)["data"]["username"] + "\r\n";
-                    textBox1.Text += ((JObject)item)["data"]["password"] + "\r\n";
-                    textBox1.Text += ((JObject)item)["data"]["rtspUrl"] + "\r\n";
-                    
-                }  // end_if
-                textBox1.Text += "\r\n";
-            }
+            JObject jo = JObject.Parse(result);
             
+            textBox1.Text = "查询结果为:"+"\r\n";
+            textBox1.Text +=jo["code"] + "\r\n";// 相当于每次取ja数组中的元素，转换成JObject单独再单独提取里面code(注意括号)
+            textBox1.Text +=jo["msg"] + "\r\n";
+            // 查询code为113表示data有内容
+            if (jo["code"].ToString()=="113")
+            {
+                foreach (var item in (JArray)jo["data"])
+                {
+                    // 这里试了很多次，hasvalues表明item是否有子token；Gets a value indicating whether this token has child tokens.
+                    if (item.HasValues)
+                    {
+                        textBox1.Text += item["id"] + "\r\n";
+                        textBox1.Text += item["isOpen"] + "\r\n";
+                        textBox1.Text += item["username"] + "\r\n";
+                        textBox1.Text += item["password"] + "\r\n";
+                        textBox1.Text += item["rtspUrl"] + "\r\n";
+                        textBox1.Text += "\r\n";
+                    }//end_if                  
+                }//end_foreach
+            }//end_IF
+            else
+            {
+                MessageBox.Show("No result!");
+            }//IF_else
+     
         }
         public void get_local_json(string result)
         {
