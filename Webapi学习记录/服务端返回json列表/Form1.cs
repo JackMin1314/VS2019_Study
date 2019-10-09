@@ -227,7 +227,7 @@ namespace NFC_ID
                 WshShortcut shortcut = (WshShortcut)shell.CreateShortcut(shortcutPath);
                 shortcut.TargetPath = exePath;
                 shortcut.Arguments = "";// 参数  
-                shortcut.Description = "应用程序说明--金坤科创NFC设备7字节uid读取";
+                shortcut.Description = "金坤科创NFC设备7字节uid读取";
                 shortcut.WorkingDirectory = Environment.CurrentDirectory;//程序所在文件夹，在快捷方式图标点击右键可以看到此属性  
                 shortcut.IconLocation = exePath;//图标，该图标是应用程序的资源文件  
                 shortcut.WindowStyle = 1;
