@@ -9,7 +9,7 @@
 ### 1. 解压后不要立即运行exe程序（以下检查可忽略）
 
 * 检查Windows系统是否为64位
-* 检查系统是否有.net环境(一般都会有)，如果后面运行程序提示缺少.net框架需要去官网 [下载][https://dotnet.microsoft.com/download/dotnet-framework/net472](点击下载即可安装.net4.7.2 runtime)
+* 检查系统是否有.net环境(一般都会有)，如果后面运行程序提示缺少.net框架需要去官网 [下载][https://dotnet.microsoft.com/download/dotnet-framework/net472]    (点击下载即可安装.net4.7.2 runtime)
 
 ### 2. 添加Windows安装服务程序到环境变量里
 
