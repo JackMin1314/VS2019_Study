@@ -82,7 +82,7 @@
 
 总体详细架构图如下所示:
 
-![image-20191107171704927](C:\Users\MECHREVO\AppData\Roaming\Typora\typora-user-images\image-20191107171704927.png)
+![NFC_Architecture](https://github.com/JackMin1314/PicturesFiles/blob/master/NFC_id_Software_Architecture.png)
 
 ### 3.3 开发环境
 
