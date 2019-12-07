@@ -82,7 +82,7 @@
 
 总体详细架构图如下所示:
 
-![NFC_Architecture](https://github.com/JackMin1314/PicturesFiles/blob/master/NFC_id_Software_Architecture.png)
+![Image text](https://github.com/JackMin1314/PicturesFiles/blob/master/NFC_pics/NFC_id_Software_Architecture.png)
 
 ### 3.3 开发环境
 
